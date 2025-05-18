@@ -22,6 +22,7 @@ const db = {
 
 // Carrega os modelos
 db.models.Animal = require('./Animal')(sequelize, Sequelize.DataTypes);
+db.models.Adotante = require('./Adotante')
 
 // Associações entre modelos (quando houver)
 Object.keys(db.models).forEach((modelName) => {

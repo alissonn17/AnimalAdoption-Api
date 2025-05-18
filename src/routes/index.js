@@ -1,10 +1,12 @@
 const express = require('express');
 const animalRoutes = require('./animalRoutes');
-
+const adotanteRoutes = require('./adotanteRoutes');
 const router = express.Router();
+
 
 // Definir todas as rotas
 router.use('/animais', animalRoutes);
+router.use('/adotantes', adotanteRoutes);
 
 // Rota padrão para verificação da API
 router.get('/', (req, res) => {
