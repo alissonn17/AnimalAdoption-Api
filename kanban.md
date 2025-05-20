@@ -2,7 +2,6 @@
 
 ## 🟡 A Fazer
 - [ ] Restante dos integrantes fazer seus cruds
-    Abrigos
     Adotantes
     Processos de Adoção
     Voluntários
@@ -25,5 +24,6 @@
 - [x] Codigo base para o desenvolvimento individual dos cruds
 - [x] Sincronização com o PostgreSQL 
 - [x] Crud Animais e suas rotas
+- [x] Crud Abrigos e suas rotas
 - [x] Testes insomnia ok
 - [x] Pre configuracao banco
