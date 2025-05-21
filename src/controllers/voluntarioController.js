@@ -19,7 +19,8 @@ exports.getAllVoluntarios = async (req, res) => {
     const voluntarios = await Voluntario.findAll();
     return res.status(200).json(voluntarios);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error('Erro ao listar voluntarios:', error);
+    return res.status(500).json({ error: error.message });
   }
 };
 

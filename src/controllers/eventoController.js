@@ -2,7 +2,7 @@ const { models } = require('../models');
 const { Evento } = models;
 
 
-exports.criarEvento = async (req, res) => {
+exports.criaEvento = async (req, res) => {
   try {
     const evento = await Evento.create(req.body);
     return res.status(201).json(evento);
@@ -16,7 +16,7 @@ exports.criarEvento = async (req, res) => {
 exports.listaEvento = async (req, res) => {
   try {
     const evento = await Evento.findAll();
-    return res.status(200).json(eventos);
+    return res.status(200).json(evento);
   } catch (error) {
     console.error('Erro ao listar eventos:', error);
     return res.status(500).json({ error: error.message });

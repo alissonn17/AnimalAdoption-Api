@@ -3,6 +3,7 @@ const animalRoutes = require('./animalRoutes');
 const adotanteRoutes = require('./adotanteRoutes');
 const abrigoRoutes = require('./abrigoRoutes');
 const voluntarioRoutes = require('./voluntarioRoutes');
+const eventoRoutes = require('./eventoRoutes');
 const router = express.Router();
 
 
@@ -11,6 +12,7 @@ router.use('/animais', animalRoutes);
 router.use('/adotantes', adotanteRoutes);
 router.use('/abrigos', abrigoRoutes);
 router.use('/voluntarios', voluntarioRoutes);
+router.use('/evento', eventoRoutes);
 
 // Rota padrão para verificação da API
 router.get('/', (req, res) => {
