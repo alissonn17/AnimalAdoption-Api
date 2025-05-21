@@ -32,5 +32,16 @@
     "jest": "^29.7.0",
     "nodemon": "^3.0.1",
     "supertest": "^6.3.3"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathpestana/AnimalAdoption-Api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mathpestana/AnimalAdoption-Api/issues"
+  },
+  "homepage": "https://github.com/mathpestana/AnimalAdoption-Api#readme"
 }
