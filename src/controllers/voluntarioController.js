@@ -1,4 +1,6 @@
-const Voluntario = require('../models/Voluntario');
+const { models } = require('../models');
+const { Voluntario } = models;
+
 
 // Criar novo voluntário
 exports.createVoluntario = async (req, res) => {

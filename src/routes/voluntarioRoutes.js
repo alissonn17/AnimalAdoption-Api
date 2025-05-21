@@ -1,6 +1,6 @@
 const express = require('express');
-const router = express.Router();
 const voluntarioController = require('../controllers/voluntarioController');
+const router = express.Router();
 
 router.post('/', voluntarioController.createVoluntario);
 router.get('/', voluntarioController.getAllVoluntarios);
