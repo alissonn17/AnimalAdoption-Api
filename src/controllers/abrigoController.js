@@ -1,4 +1,5 @@
-const { Abrigo } = require('../models');
+const { models } = require('../models');
+const { Abrigo } = models;
 
 const criarAbrigo = async (req, res) => {
     try {
