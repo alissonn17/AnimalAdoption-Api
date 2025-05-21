@@ -8,6 +8,7 @@ exports.createVoluntario = async (req, res) => {
     const voluntario = await Voluntario.create(req.body);
     res.status(201).json(voluntario);
   } catch (error) {
+    console.error('Erro ao criar adotante:', error);
     res.status(400).json({ error: error.message });
   }
 };
@@ -16,7 +17,7 @@ exports.createVoluntario = async (req, res) => {
 exports.getAllVoluntarios = async (req, res) => {
   try {
     const voluntarios = await Voluntario.findAll();
-    res.json(voluntarios);
+    return res.status(200).json(voluntarios);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

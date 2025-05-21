@@ -24,6 +24,8 @@ const db = {
 db.models.Animal = require('./Animal')(sequelize, Sequelize.DataTypes);
 db.models.Adotante = require('./Adotante')(sequelize, Sequelize.DataTypes);
 db.models.Evento = require('./Evento')(sequelize, Sequelize.DataTypes);
+db.models.Voluntario = require('./Voluntario')(sequelize, Sequelize.DataTypes);
+
 
 // Associações entre modelos (quando houver)
 Object.keys(db.models).forEach((modelName) => {
