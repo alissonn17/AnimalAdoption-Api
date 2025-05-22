@@ -19,8 +19,8 @@ GitHub: [https://github.com/mathpestana](https://github.com/mathpestana)
 
 <span class="integrante">Dandara Stefany</span>  
 Email: [dandaradias364@gmail.com](mailto:dandaradias364@gmail.com)  
-Linkedin: [https://linkedin.com/in//](https://linkedin.com/in//)  
-GitHub: [https://github.com/](https://github.com/)
+Linkedin: [https://linkedin.com/in//](https://www.linkedin.com/in/dandara-dias-07a2b2205/)  
+GitHub: [https://github.com/](https://github.com/DanadraDias)
 
 <span class="integrante">Caio</span>  
 Email: [@gmail.com](mailto:@gmail.com)  
