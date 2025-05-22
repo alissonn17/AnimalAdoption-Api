@@ -22,10 +22,10 @@ Email: [dandaradias364@gmail.com](mailto:dandaradias364@gmail.com)
 Linkedin: [https://linkedin.com/in//](https://www.linkedin.com/in/dandara-dias-07a2b2205/)  
 GitHub: [https://github.com/](https://github.com/DanadraDias)
 
-<span class="integrante">Caio</span>  
-Email: [@gmail.com](mailto:@gmail.com)  
-Linkedin: [https://linkedin.com/in//](https://linkedin.com/in//)  
-GitHub: [https://github.com/](https://github.com/)
+<span class="integrante">Caio Sousa</span>  
+Email: [c260996@dac.unicamp.br](mailto:c260996@dac.unicamp.br)  
+Linkedin: [https://linkedin.com/in/developercaio](https://linkedin.com/in/developercaio)  
+GitHub: [https://github.com/caiousousa](https://github.com/caiousousa)
 
 <span class="integrante">Gabriel</span>  
 Email: [raulgabruel12@gmail.com](mailto:raulgabruel12@gmail.com)  
