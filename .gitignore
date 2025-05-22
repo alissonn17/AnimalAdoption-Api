@@ -59,3 +59,6 @@ yarn-error.log*
 # Arquivos do sistema
 .DS_Store
 Thumbs.db
+
+#Docs geradas pelo mkdocs | não subir pois será gerada automaticamente no servidor
+site/

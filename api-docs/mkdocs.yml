@@ -1,0 +1,35 @@
+site_name: API de Adoção de Animais
+site_description: Documentação da API para gerenciamento de animais para adoção
+site_author: SQUAD 1
+site_url: http://localhost:8000
+
+theme:
+  name: material
+
+nav:
+  - Início: index.md
+  - Contato: contato.md
+  - Endpoints: endpoints.md
+  - Exemplos: exemplos.md
+  - Funcionalidades: funcionalidades.md
+  - Modelos: modelos.md
+  - Rodando o Projeto: rodandoProjeto.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mathpestana/AnimalAdoption-Api
