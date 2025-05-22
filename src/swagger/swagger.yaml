@@ -1,1 +1,506 @@
-# Necessario criarem a Documentação
+openapi: 3.0.3
+info:
+  title: API de Adoção de Animais
+  description: >
+    API RESTful desenvolvida para gerenciar animais, adoções,
+    adotantes, voluntários, abrigos e eventos em ONGs e instituições de proteção animal.
+  version: 1.0.0
+  contact:
+    name: Suporte
+    url: https://github.com/mathpestana/AnimalAdoption-Api
+    email: contato@animaladoption.com
+
+servers:
+  - url: http://localhost:3000/api
+    description: Servidor local
+
+tags:
+  - name: Animais
+    description: Gerenciamento de animais
+  - name: Adoções
+    description: Gerenciamento do processo de adoção
+  - name: Voluntários
+    description: Gerenciamento de voluntários
+  - name: Adotantes
+    description: Gerenciamento de adotantes
+  - name: Eventos
+    description: Gerenciamento de eventos
+  - name: Abrigos
+    description: Gerenciamento de abrigos
+
+paths:
+  
+  # CRUD de Animais
+  
+  /animais:
+    get:
+      tags: [Animais]
+      summary: Lista todos os animais
+      responses:
+        '200':
+          description: Lista de animais
+    post:
+      tags: [Animais]
+      summary: Cadastra um novo animal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal'
+      responses:
+        '201':
+          description: Animal cadastrado
+
+  /animais/{id}:
+    get:
+      tags: [Animais]
+      summary: Busca um animal por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Animal encontrado
+        '404':
+          description: Animal não encontrado
+    put:
+      tags: [Animais]
+      summary: Atualiza um animal
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal'
+      responses:
+        '200':
+          description: Animal atualizado
+    delete:
+      tags: [Animais]
+      summary: Remove um animal
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Animal removido
+
+  
+  # CRUD de Adoções
+  
+  /adocoes:
+    get:
+      tags: [Adoções]
+      summary: Lista todas as adoções
+      responses:
+        '200':
+          description: Lista de adoções
+    post:
+      tags: [Adoções]
+      summary: Cria uma nova solicitação de adoção
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adocao'
+      responses:
+        '201':
+          description: Solicitação criada
+
+  /adocoes/{id}:
+    get:
+      tags: [Adoções]
+      summary: Busca uma adoção por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Solicitação encontrada
+        '404':
+          description: Solicitação não encontrada
+    put:
+      tags: [Adoções]
+      summary: Aprova ou reprova uma adoção
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnaliseAdocao'
+      responses:
+        '200':
+          description: Análise registrada
+    delete:
+      tags: [Adoções]
+      summary: Remove uma solicitação de adoção
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Solicitação removida
+
+  
+  # CRUD de Voluntários
+  
+  /voluntarios:
+    get:
+      tags: [Voluntários]
+      summary: Lista todos os voluntários
+      responses:
+        '200':
+          description: Lista de voluntários
+    post:
+      tags: [Voluntários]
+      summary: Cadastra um novo voluntário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Voluntario'
+      responses:
+        '201':
+          description: Voluntário criado
+
+  /voluntarios/{id}:
+    get:
+      tags: [Voluntários]
+      summary: Busca um voluntário por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Voluntário encontrado
+        '404':
+          description: Voluntário não encontrado
+    put:
+      tags: [Voluntários]
+      summary: Atualiza um voluntário
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Voluntario'
+      responses:
+        '200':
+          description: Voluntário atualizado
+    delete:
+      tags: [Voluntários]
+      summary: Remove um voluntário
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Voluntário removido
+
+  
+  # CRUD de Adotantes
+  
+  /adotantes:
+    get:
+      tags: [Adotantes]
+      summary: Lista todos os adotantes
+      responses:
+        '200':
+          description: Lista de adotantes
+    post:
+      tags: [Adotantes]
+      summary: Cadastra um novo adotante
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adotante'
+      responses:
+        '201':
+          description: Adotante criado
+
+  /adotantes/{id}:
+    get:
+      tags: [Adotantes]
+      summary: Busca um adotante por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Adotante encontrado
+        '404':
+          description: Adotante não encontrado
+    put:
+      tags: [Adotantes]
+      summary: Atualiza um adotante
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adotante'
+      responses:
+        '200':
+          description: Adotante atualizado
+    delete:
+      tags: [Adotantes]
+      summary: Remove um adotante
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Adotante removido
+
+  
+  # CRUD de Eventos
+  
+  /eventos:
+    get:
+      tags: [Eventos]
+      summary: Lista todos os eventos
+      responses:
+        '200':
+          description: Lista de eventos
+    post:
+      tags: [Eventos]
+      summary: Cadastra um novo evento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Evento'
+      responses:
+        '201':
+          description: Evento criado
+
+  /eventos/{id}:
+    get:
+      tags: [Eventos]
+      summary: Busca um evento por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Evento encontrado
+        '404':
+          description: Evento não encontrado
+    put:
+      tags: [Eventos]
+      summary: Atualiza um evento
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Evento'
+      responses:
+        '200':
+          description: Evento atualizado
+    delete:
+      tags: [Eventos]
+      summary: Remove um evento
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Evento removido
+
+  
+  # CRUD de Abrigos (NOVO)
+  
+  /abrigos:
+    get:
+      tags: [Abrigos]
+      summary: Lista todos os abrigos
+      responses:
+        '200':
+          description: Lista de abrigos
+    post:
+      tags: [Abrigos]
+      summary: Cadastra um novo abrigo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Abrigo'
+      responses:
+        '201':
+          description: Abrigo criado
+
+  /abrigos/{id}:
+    get:
+      tags: [Abrigos]
+      summary: Busca um abrigo por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Abrigo encontrado
+        '404':
+          description: Abrigo não encontrado
+    put:
+      tags: [Abrigos]
+      summary: Atualiza um abrigo
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Abrigo'
+      responses:
+        '200':
+          description: Abrigo atualizado
+    delete:
+      tags: [Abrigos]
+      summary: Remove um abrigo
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        '204':
+          description: Abrigo removido
+
+
+# Schemas
+
+components:
+  schemas:
+    Animal:
+      type: object
+      required: [nome, especie, porte, sexo]
+      properties:
+        nome: { type: string }
+        especie: { type: string }
+        raca: { type: string }
+        idade: { type: integer }
+        porte: { type: string, enum: [pequeno, medio, grande] }
+        sexo: { type: string, enum: [macho, fêmea] }
+        descricao: { type: string }
+        status: { type: string, enum: [disponível, em processo, adotado] }
+        foto_url: { type: string }
+
+    Adocao:
+      type: object
+      required: [nome_adotante, contato, animal_id]
+      properties:
+        nome_adotante: { type: string }
+        contato: { type: string }
+        animal_id: { type: integer }
+        mensagem: { type: string }
+        status: { type: string, enum: [pendente, aprovada, reprovada] }
+        data_retirada: { type: string, format: date }
+        hora_retirada: { type: string }
+        local_retirada: { type: string }
+        justificativa: { type: string }
+
+    AnaliseAdocao:
+      type: object
+      properties:
+        aprovada: { type: boolean }
+        data_retirada: { type: string, format: date }
+        hora_retirada: { type: string }
+        local_retirada: { type: string }
+        justificativa: { type: string }
+
+    Voluntario:
+      type: object
+      required: [nome, cpf]
+      properties:
+        nome: { type: string }
+        cpf: { type: string }
+        genero: { type: string }
+        endereco: { type: string }
+        telefone: { type: string }
+
+    Adotante:
+      type: object
+      required: [nomeCompleto, cpf, telefone, endereco, email]
+      properties:
+        nomeCompleto: { type: string }
+        cpf: { type: string }
+        genero: { type: string }
+        telefone: { type: string }
+        endereco: { type: string }
+        email: { type: string }
+
+    Evento:
+      type: object
+      required: [data, nome, endereco, responsavel]
+      properties:
+        data: { type: string, format: date }
+        nome: { type: string }
+        endereco: { type: string }
+        responsavel: { type: string }
+
+    Abrigo:
+      type: object
+      required: [nome, endereco, capacidade]
+      properties:
+        nome: { type: string }
+        endereco: { type: string }
+        capacidade: { type: integer }

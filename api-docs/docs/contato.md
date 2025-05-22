@@ -4,7 +4,7 @@ Este projeto foi desenvolvido por:
 
 <span class="integrante">Luísa Silva</span>  
 Email: [luisa.silva.dev@gmail.com](mailto:luisa.silva.dev@gmail.com)  
-Linkedin: [https://linkedin.com/in/luisa-silva-dev/](https://linkedin.com/in/luisa-silva-dev/)  
+Linkedin: [https://linkedin.com/in/luisa-silva-dev/](https://linkedin.com/in/luísa-silva-dev/)  
 GitHub: [https://github.com/luisa-rcs](https://github.com/luisa-rcs) 
 
 <span class="integrante">Ânica Santos</span>  
