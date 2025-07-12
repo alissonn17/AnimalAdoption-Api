@@ -28,7 +28,7 @@ const config = {
     },
   },
   production: {
-    use_env_variable: 'postgresql://neondb_owner:npg_ARe13PwnaDZY@ep-hidden-king-a5kqgl2d-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require',
+    use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
     dialectOptions: {
       ssl: {
